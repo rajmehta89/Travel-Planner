@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //its a commnet
+        var a = 90;
+        var a = "this is my raj"
+
+        const b = 90;
+        console.log(b + "\t");
+
+        //  you cant ue assignmnet oerator on the const variable
+        //b="hello you are too beautifull my dear";
+        //means u cant vhange the value of the const variable
+
+        //numbers
+        //objects
+        //bolleans - true or false
+        //string
+        //undefiend
+        //null
+
+        console.log(a);
+
+        //to define a function in thejava script
+
+        function hello() {
+            console.log("hey i am raj mehta");
+        }
+
+        //to call the function into the javaa script
+        hello();
+
+        //to carete an object into the java script
+
+        let obja = {
+            r: 34,
+            a: "hello",
+            j: "raj mehta",
+
+            //to create an function inside the object 
+            func: function myfunc(name) {
+                console.log("the name is " + name);
+            }
+        }
+
+        //to print its elements of the object
+        console.log(obja.r);
+        console.log(obja.func("raj"));
+
+        //to handle the event into the java script
+        document.addEventListener("click", function toperform() {
+            console.log("you are clicking so event is happeing here and alert essage is happing here::!!");
+
+            //alert and confirm in the java script yeah !!!
+            alert("you are clicking");
+
+            //when u are confirming something into the web site than u are doing this!!!
+            let check = confirm("are u sure?");
+            if (check)
+                console.log("you are checking@@@");
+
+            else
+                console.log("you are not checking here anything!!");
+            //to create an array into the java script
+            // to print an array element into the array so you done like this
+            let arr = [34, 56, 87];
+            console.log(arr[2]);
+        });
+
+
+        //strings and its methods
+        let text = "Hello world!";
+        let result = text.substring(1, 4);
+        console.log(result);
+
+        //java script asuncronius programming
+
+        setTimeout(() => {
+            console.log("i am raj mehta fro the NVS");
+        }, 3000);
+
+        console.log("main niche wala code hoon");
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        i am learining java script
+    </h1>
+</body>
+
+</html>

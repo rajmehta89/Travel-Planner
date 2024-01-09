@@ -1,0 +1,206 @@
+<html>
+
+<head>
+    <%- include('layouts/header.ejs'); -%>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <style>
+            .daterangepicker td.active,
+            .daterangepicker td.active:hover {
+                background-color: rgb(22, 189, 189);
+                border-color: transparent;
+                color: #fff;
+            }
+
+            .btn-primary {
+                color: #fff;
+                background-color: rgb(22, 189, 189);
+                border-color: rgb(22, 189, 189);
+            }
+
+            .btn-primary:hover {
+                border-color: rgb(93 171 171);
+                background-color: rgb(93 171 171);
+
+            }
+
+            .btn-primary.disabled,
+            .btn-primary:disabled {
+                color: #fff;
+                background-color: rgb(22, 189, 189);
+                border-color: rgb(22, 189, 189);
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('layouts/navbar.ejs'); -%>
+        <section class="book" id="book" style="background-image: url('image/g5.jpg'); background-size: cover;">
+            <div class="container">
+                <div>
+                    <div class="main-text" style="color: #dbdada;">
+                        <h1>Plan Your Dream Trip:<span> Customize Your Itinerary</span></h1>
+                        <h3>Book Accommodation, Tours & Flights</h3>
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-6 py-4 py-md-6">
+
+                            <form action="/trip" id="myForm" method="post">
+                                <div class="div" style="display: flex;">
+                                    <input type="text" class="form-control" id="destinationInput" value="<%=user.city%>"
+                                        placeholder="Source" name="source" list="destinationOptions" required>
+                                    <i class="fas fa-exchange-alt" style="margin: 1rem;"></i>
+                                    <input type="text" class="form-control" id="destinationInput"
+                                        placeholder="Destination" name="destination" list="destinationOptions" required>
+                                </div>
+                                <br>
+                                <datalist id="destinationOptions">
+                                </datalist>
+
+                                <input type="hidden" class="form-control" name="startdate" id="startdate">
+                                <input type="hidden" class="form-control" id="enddate" name="enddate">
+
+                                <!-- <label for="dateRangePicker">Select Date Range </label> -->
+                                <input type="text" id="dateRangePicker" name="daterange" required
+                                    style="color: #6C757D;" />
+
+                                <input type="submit" class="submit" value="Start Planning">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="services" id="services">
+            <div class="container">
+
+                <div class="main-txt">
+                    <h1><span>S</span>ervices</h1>
+                </div>
+
+                <div class="row" style="margin-top: 30px;">
+
+                    <div class="col-md-4 py-3 py-md-0">
+
+                        <div class="card">
+                            <i class="fas fa-hotel"></i>
+                            <div class="card-body">
+                                <h3>Hotels</h3>
+                                <p>Friendly Stay</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+
+                        <div class="card">
+                            <i class="fas fa-utensils"></i>
+                            <div class="card-body">
+                                <h3>Food & Drinks</h3>
+                                <p>Hygenic and healthy food</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+
+                        <div class="card">
+                            <i class="fas fa-bullhorn"></i>
+                            <div class="card-body">
+                                <h3>Safety Guide</h3>
+                                <p>Your safety , our priority</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="row" style="margin-top: 30px;">
+
+                    <div class="col-md-4 py-3 py-md-0">
+
+                        <div class="card">
+                            <i class="fas fa-globe-asia"></i>
+                            <div class="card-body">
+                                <h3>Around The India</h3>
+                                <p>Just travel and enjoy</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+
+                        <div class="card">
+                            <i class="fas fa-plane"></i>
+                            <div class="card-body">
+                                <h3>Manage your trip</h3>
+                                <p>Manage your trip according to your wish</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+
+                        <div class="card">
+                            <i class="fas fa-hiking"></i>
+                            <div class="card-body">
+                                <h3>Customization</h3>
+                                <p>Customize your trip</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+        <%- include('layouts/gallary.ejs'); -%>
+            <%- include('layouts/about.ejs'); -%>
+                <%- include('layouts/footer.ejs'); -%>
+                    <script src="js/dashboard.js"></script>
+                    <script>
+                        $(document).ready(function () {
+
+                            // Date Range Picker Handler
+                            $('#dateRangePicker').daterangepicker({
+                                opens: 'left',
+                                startDate: moment(),
+                                endDate: moment().add(6, 'days'),
+                                minDate: moment(),
+                                locale: {
+                                    format: 'ddd, MMM D'
+                                }
+                            }, function (start, end, label) {
+                                $('#startdate').val(start.format('YYYY-MM-DD'));
+                                $('#enddate').val(end.format('YYYY-MM-DD'));
+                            });
+                            $('#dateRangePicker').val('Start Date    →    End Date');
+
+                            // On focus and On blur feature added
+                            const originalPlaceholder = $('#destinationInput').attr("placeholder");
+                            $('#destinationInput').focus(function () {
+                                $(this).attr("placeholder", "Enter The City");
+                            })
+                            $('#destinationInput').blur(function () {
+                                $(this).attr("placeholder", originalPlaceholder);
+                            })
+                        });
+                    </script>
+</body>
+
+</html>
