@@ -1,0 +1,181 @@
+/* .footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 20rem;
+    background-color: rgba(13, 13, 13, 0.579);
+    flex-wrap: wrap;
+}
+
+.first {
+    width: 600px;
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.header {
+    font-size: large;
+    color: white;
+    font-weight: 3rem;
+}
+
+.text,
+.contact,
+.context {
+    font-size: medium;
+    color: white;
+    font-weight: 1.5rem;
+}
+
+.icon {
+    width: 7rem;
+}
+
+.icon img {
+    width: 60px;
+    background: cover;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.phone {
+    display: flex;
+    flex-direction: row;
+    margin-right: 7px;
+    justify-content: flex-start;
+}
+
+.image {
+    width: 10px;
+    background: cover;
+} */
+
+
+/* Footer.css */
+
+
+/* General styles */
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.first,
+.second,
+.third {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 30px;
+}
+
+.phone,
+.location,
+.clock {
+    display: flex;
+    align-items: center;
+}
+
+.phone .image,
+.location .image,
+.clock .image {
+    margin-right: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skype,
+.facebook,
+.google,
+.twitter,
+.insta {
+    margin-right: 10px;
+}
+
+.links img {
+    width: 40px;
+    height: auto;
+}
+
+.details {
+    margin-top: 30px;
+}
+
+.links {
+    margin-top: 80px;
+}
+
+.images_trips img {
+    width: 60px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+
+/* Header styles */
+
+.header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* Text styles */
+
+.text,
+.context {
+    font-size: 0.9em;
+}
+
+
+/* Icon styles */
+
+.icon {
+    margin-bottom: 10px;
+    width: 55px;
+    height: 70px;
+}
+
+.image {
+    margin-bottom: 10px;
+    width: 30px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .first,
+    .second,
+    .third {
+        width: 100%;
+    }
+}

@@ -23,7 +23,7 @@ export default function Login() {
                 password
             });
             console.log(response.data.message);
-            history("/Header");
+            history("/Home");
         } catch (error) {
             console.error('Login failed');
         }
@@ -37,7 +37,7 @@ export default function Login() {
                 password
             });
             console.log(response.data);
-            history("/Header");
+            history("/Home");
         } catch (error) {
            console.error('Signup failed');
         } 

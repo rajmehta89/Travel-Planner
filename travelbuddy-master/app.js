@@ -15,8 +15,8 @@ const app = express();
 const flash = require("express-flash");
 const MongoStore = require("connect-mongo")(session);
 const {
-  notFound,
-  handleError,
+    notFound,
+    handleError,
 } = require("./controller/errorHandler_controller");
 app.use(express.static(path.join(__dirname, "public")));
 db();
@@ -28,15 +28,15 @@ app.use(bodyParser.json());
 app.use(flash());
 // passport.js config
 app.use(
-  session({
-    secret: "Hakuna mata taa...!",
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: process.env.url,
-      ttl: 3600,
-    }),
-  })
+    session({
+        secret: "Hakuna mata taa...!",
+        resave: false,
+        saveUninitialized: false,
+        store: MongoStore.create({
+            mongoUrl: process.env.url,
+            ttl: 3600,
+        }),
+    })
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -46,14 +46,14 @@ passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+    done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  user.findById(id, (err, user) => {
-    if (err) return done(err, null);
-    if (user) return done(null, user);
-  });
+    user.findById(id, (err, user) => {
+        if (err) return done(err, null);
+        if (user) return done(null, user);
+    });
 });
 
 // Handle routes
@@ -65,9 +65,9 @@ app.use(mytrip);
 app.use(notFound);
 app.use(handleError);
 app.listen(3000, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Server Started At Port 3000");
-  }
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Server Started At Port 3000");
+    }
 });
