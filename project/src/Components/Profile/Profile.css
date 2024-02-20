@@ -1,0 +1,99 @@
+.user-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.outer-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* 100% of the viewport height */
+    width: 100%;
+    /* 100% of the viewport width */
+}
+
+.backup {
+    height: 40%;
+    width: 100%;
+    background-color: black;
+}
+
+.backlow {
+    height: 60%;
+    width: 100%;
+    background-color: grey;
+}
+
+.inner-container {
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+
+    padding: 20px;
+    height: 80%;
+    width: 80%;
+    /* Optional padding for inner content */
+}
+
+
+.user-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+.UserProfile{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    width: 40%;
+}
+
+.mainProfile-right {
+    width: 60%;
+}
+
+.UserProfile-up{
+    display: flex;
+    margin-left: 4rem;
+}
+
+.UserProfile-down {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+}
+
+
+.UserProfile-down button{
+ width:85%;
+}
+
